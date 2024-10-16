@@ -1,0 +1,37 @@
+Installing the Library
+First of all, you will need to install the Adafruit library for LCD, so type the below command in 
+the Raspberry pi terminal.
+git clone https://github.com/adafruit/Adafruit_Python_CharLCD.git
+Then enter into the directory we just created by typing the following command.
+cd ./Adafruit_Python_CharLCD
+
+Now run the setup by typing the below command.
+
+sudo python setup.py install
+
+sudo python3 setup.py install
+
+Then go the examples folder and open file ‘char_lcd.py’ file. Change the pin numbers in that
+
+example to the ones shown below.
+
+
+code ....
+from Adafruit_CharLCD import Adafruit_CharLCD 
+lcd = Adafruit_CharLCD(rs=26, en=19, d4=13, d5=6, d6=5, d7=21, cols=16, lines=2)
+lcd.clear()
+lcd.message('WELCOME TO \nIoT STARTERS')
+sleep(2)
+try:
+ while True
+ for x in range(0, 16):
+ lcd.move_left()
+ sleep(0.1)
+ sleep(1)
+ for x in range(0, 16):
+ lcd.move_right()
+ sleep(0.1)
+ sleep(3)
+except KeyboardInterrupt:
+ pass
+lcd.clear()
